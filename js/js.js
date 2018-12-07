@@ -1,8 +1,8 @@
-
 	function addRedditPics(add){
 		let ul = document.getElementById("search-results");
 		let resultImg = document.createElement("img");
 		resultImg.setAttribute("class", "resultImg");
+		resultImg.setAttribute("onload", "resultImg");
 		resultImg.src = add;
 		ul.appendChild(resultImg);	
 	}
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function(){
 		// get user input here
 		let userInput = (document.querySelector('input').value);
 		// apply user input to modify json query
-		let requestURL = `https://www.reddit.com/search.json?q=${userInput}&limit=1000`
+		let requestURL = `https://www.reddit.com/search.json?q=${userInput}&limit=500`
 		console.log(userInput);
 		// call then next step/function
 		makeFetchHappen(requestURL);
